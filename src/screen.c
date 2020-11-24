@@ -6,19 +6,21 @@
 #include "../headers/screen.h"
 
 //Functions
-void screen_create(Screen *s, int h, int w, int y, int x){
-  s->win =  newwin(h, w, y, x);
-  s->h = h;
-  s->w = w;
-  s->y = y;
-  s->x = x;
+Screen* screen_create(int h, int w, int y, int x){
+  Screen* result = (Screen*)malloc(sizeof(Screen));
+  result->win =  newwin(h, w, y, x);
+  result->h = h;
+  result->w = w;
+  result->y = y;
+  result->x = x;
+  return result;
 }
 
 void screen_fill(Screen *s, const char* c, int col){
   wattron(s->win, COLOR_PAIR(col));
   for(int i = 0; i < s->h; i++)
     mvwhline(s->win, i, 0, *c, s->w);
-    
+
   wattroff(s->win, COLOR_PAIR(col));
 }
 
@@ -26,12 +28,12 @@ void screen_fill_randomly(Screen *s, int seed, const char *c, int col, int chanc
   srand(seed);
 
   wattron(s->win, COLOR_PAIR(col));
-  
+
   for(int i = 0; i < s->h; i++)
     for(int j = 0; j < s->w; j++)
       if((rand() % 100) +1 < chance)
         mvwprintw(s->win, i, j, c);
-  
+
   wattroff(s->win, COLOR_PAIR(col));
 }
 
@@ -77,7 +79,7 @@ void screen_polka_dot(Screen *s, const char* c, int col, int spacing){
     for(int j = 0; j < spacing*2; j++)
       for(int k = 0; k < s->h; k+=spacing*2)
         mvwvline(s->win, k, j+i, *c, spacing);
-  
+
   wattroff(s->win, COLOR_PAIR(col));
 }
 

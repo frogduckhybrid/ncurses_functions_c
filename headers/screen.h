@@ -6,17 +6,17 @@
 
 //Project Directives
 
-//Struct definition
+//Struct Definition
 typedef struct Screen{
   WINDOW *win;
   int h;
   int w;
   int y;
   int x;
-} Screen;
+}Screen;
 
 //Functions
-void screen_create(Screen *s, int h, int w, int y, int x);
+Screen* screen_create(int h, int w, int y, int x);
 void screen_fill(Screen *s, const char* c, int col);
 void screen_fill_randomly(Screen *s, int seed, const char*c, int col, int percent);
 void screen_cross(Screen *s, const char* c, int col, int y, int x);
