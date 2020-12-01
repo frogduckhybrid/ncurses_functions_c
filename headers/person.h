@@ -16,10 +16,8 @@ int y;
 int x;
 }Person;
 
-
 //Functions
 Person* person_create(Screen *s, int h, int w, int y, int x);
-void person_draw_body(Person *p, const char* c, int col);
-void person_draw_head(Person *p, const char* c, int col);
+void person_draw(Person *p, const char* c, int head_col, int body_col);
 
 #endif

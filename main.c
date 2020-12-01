@@ -30,18 +30,17 @@ int main(int argc, char** argv){
   Screen *s = screen_create(62,206,2,2);
   Screen *s2 = screen_create(62,60,2,210);
 
-  Person *p = person_create(s, 18, 35, 30, 30);
+  Person *p = person_create(s, 9, 15, 3, 2);
+  Person *p2 = person_create(s, 18, 30, 15,30);
 
   refresh();
 
   screen_fill(s, ".", 4);
-  person_draw_body(p, "-", 6);
-  person_draw_head(p, "-", 5);
-  //screen_checker(s, "X", 2, 3);
+  person_draw(p, "-", 6, 5);
+  person_draw(p2, "=", 6, 5);
   wrefresh(s->win);
 
   screen_fill(s2, ".", 1);
-  //screen_checker(s2, "X", 4, 3);
   wrefresh(s2->win);
 
   free(s);
