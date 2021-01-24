@@ -25,4 +25,5 @@ void screen_dotted_v_line(Screen *s, const char* c, int col, int y, int spacing)
 void screen_dotted_h_line(Screen *s, const char* c, int col, int x, int spacing);
 void screen_polka_dot(Screen *s, const char* c, int col, int spacing);
 void screen_checker(Screen *s, const char* c, int col, int spacing);
+void screen_sine_wave(Screen *s, const char* c, int col, double amp, double freq);
 #endif

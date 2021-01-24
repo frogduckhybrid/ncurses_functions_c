@@ -1,6 +1,7 @@
 //Library Directives
 #include <curses.h>
 #include <stdlib.h>
+#include <math.h>
 
 //Project Directives
 #include "../headers/screen.h"
@@ -94,4 +95,11 @@ void screen_checker(Screen *s, const char* c, int col, int spacing){
       }
 
   wattroff(s->win, COLOR_PAIR(col));
+}
+
+void screen_sine_wave(Screen *s, const char* c, int col, double amp, double freq){
+  wattron(s->win, COLOR_PAIR(col));
+    for(size_t j = 0; j < s->w; j++){
+      mvwprintw(s->win, s->h/2 + sin(j * freq) * amp, j, c);
+    }
 }

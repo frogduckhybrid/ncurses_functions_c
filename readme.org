@@ -1,0 +1,18 @@
+* Ncurses functions (C edition)
+
+** Testing
+
+Only tested on konsole with default settings
+
+** Example Images
+
+*** grid
+https://user-images.githubusercontent.com/71960289/98656187-4e13e700-2338-11eb-9b73-4f647f2f3775.png
+
+*** fill_randomly
+
+https://user-images.githubusercontent.com/71960289/98656841-0fcaf780-2339-11eb-9713-d9164653fd75.png
+
+*** sine_wave
+
+https://user-images.githubusercontent.com/71960289/105619112-40261c00-5de7-11eb-8870-930bdba77039.png
