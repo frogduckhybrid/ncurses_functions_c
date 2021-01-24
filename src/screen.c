@@ -97,9 +97,50 @@ void screen_checker(Screen *s, const char* c, int col, int spacing){
   wattroff(s->win, COLOR_PAIR(col));
 }
 
-void screen_sine_wave(Screen *s, const char* c, int col, double amp, double freq){
+void screen_sin_wave(Screen *s, const char* c, int col, double amp, double freq){
   wattron(s->win, COLOR_PAIR(col));
     for(size_t j = 0; j < s->w; j++){
       mvwprintw(s->win, s->h/2 + sin(j * freq) * amp, j, c);
     }
+  wattroff(s->win, COLOR_PAIR(col));
+}
+
+void screen_cos_wave(Screen *s, const char* c, int col, double amp, double freq){
+  wattron(s->win, COLOR_PAIR(col));
+  for(size_t j = 0; j < s->w; j++){
+      mvwprintw(s->win, s->h/2 + cos(j * freq) * amp, j, c);
+  }
+  wattroff(s->win, COLOR_PAIR(col));
+}
+
+void screen_tan_wave(Screen *s, const char* c, int col, double amp, double freq){
+  wattron(s->win, COLOR_PAIR(col));
+  for(size_t j = 0; j < s->w; j++){
+      mvwprintw(s->win, s->h/2 + tan(j * freq) * amp, j, c);
+  }
+  wattroff(s->win, COLOR_PAIR(col));
+}
+
+void screen_asin_wave(Screen *s, const char* c, int col, double amp, double freq){
+  wattron(s->win, COLOR_PAIR(col));
+    for(size_t j = 0; j < s->w; j++){
+      mvwprintw(s->win, s->h/2 + asin(j * freq) * amp, j, c);
+    }
+  wattroff(s->win, COLOR_PAIR(col));
+}
+
+void screen_acos_wave(Screen *s, const char* c, int col, double amp, double freq){
+  wattron(s->win, COLOR_PAIR(col));
+  for(size_t j = 0; j < s->w; j++){
+      mvwprintw(s->win, s->h/2 + acos(j * freq) * amp, j, c);
+  }
+  wattroff(s->win, COLOR_PAIR(col));
+}
+
+void screen_atan_wave(Screen *s, const char* c, int col, double amp, double freq){
+  wattron(s->win, COLOR_PAIR(col));
+  for(size_t j = 0; j < s->w; j++){
+      mvwprintw(s->win, s->h/2 + atan(j * freq) * amp, j, c);
+  }
+  wattroff(s->win, COLOR_PAIR(col));
 }

@@ -1,5 +1,6 @@
 * Ncurses functions (C edition)
-
+** Update
+added some math functions such as sin, cos, asin, atan, etc.
 ** Testing
 
 Only tested on konsole with default settings
