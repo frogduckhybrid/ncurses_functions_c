@@ -26,10 +26,7 @@ void screen_dotted_h_line(Screen *s, const char* c, int col, int x, int spacing)
 void screen_polka_dot(Screen *s, const char* c, int col, int spacing);
 void screen_checker(Screen *s, const char* c, int col, int spacing);
 
-void screen_sin_wave(Screen *s, const char* c, int col, double amp, double freq);
-void screen_cos_wave(Screen *s, const char* c, int col, double amp, double freq);
-void screen_tan_wave(Screen *s, const char* c, int col, double amp, double freq);
-void screen_asin_wave(Screen *s, const char* c, int col, double amp, double freq);
-void screen_acos_wave(Screen *s, const char* c, int col, double amp, double freq);
-void screen_atan_wave(Screen *s, const char* c, int col, double amp, double freq);
+//Function pointer accepts sin, cos, etc from math.h
+void screen_wave(Screen *s, const char*c, double (*fp) (double), int col, double amp, double freq);
+
 #endif

@@ -1,5 +1,6 @@
 #include <curses.h>
 #include <stdlib.h>
+#include <math.h>
 
 #include "headers/screen.h"
 
@@ -35,8 +36,8 @@ int main(int argc, char** argv){
 
   screen_fill(s, ".", 2);
 
-  screen_sin_wave(s, ".", 3, 15, 0.1);
-  screen_asin_wave(s, ".", 4, 15, 0.01);
+  screen_wave(s, ".", sin, 3, 15, 0.1);
+  screen_wave(s, ".", cos, 4, 15, 0.1);
 
   wrefresh(s->win);
 
