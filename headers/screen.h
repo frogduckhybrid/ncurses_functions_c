@@ -1,12 +1,8 @@
 #ifndef SCREEN_H
 #define SCREEN_H
 
-//Library Directives
 #include <curses.h>
 
-//Project Directives
-
-//Struct Definition
 typedef struct Screen{
   WINDOW *win;
   int h;
@@ -15,7 +11,6 @@ typedef struct Screen{
   int x;
 }Screen;
 
-//Functions
 Screen* screen_create(int h, int w, int y, int x);
 void screen_fill(Screen *s, const char* c, int col);
 void screen_fill_randomly(Screen *s, int seed, const char*c, int col, int percent);

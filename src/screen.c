@@ -1,12 +1,9 @@
-//Library Directives
 #include <curses.h>
 #include <stdlib.h>
 #include <math.h>
 
-//Project Directives
 #include "../headers/screen.h"
 
-//Functions
 Screen* screen_create(int h, int w, int y, int x){
   Screen* result = (Screen*)malloc(sizeof(Screen));
   result->win =  newwin(h, w, y, x);
